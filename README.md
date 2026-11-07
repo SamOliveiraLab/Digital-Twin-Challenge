@@ -1,5 +1,15 @@
 # Digital Twin Challenge
 
+**Before you start:** clone this exact version of Viva-munk (Vivarium with cells) and install it. Other versions won't give the same results.
+
+    git clone https://github.com/SamOliveiraLab/Viva-munk.git
+    cd Viva-munk
+    git checkout 3fc41887e17f9a435080a751e106e04223446185
+    pip install -e .
+    cd ..
+
+Then install the rest with `pip install -r requirements.txt jupyter` (more below).
+
 ## The challenge
 
 A digital twin is a computer copy of something real that behaves like the real thing. We built one for bacteria, and now it's your turn!
