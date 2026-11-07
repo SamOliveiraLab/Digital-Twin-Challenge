@@ -8,7 +8,7 @@ We grew E. coli bacteria inside a tiny chamber on a chip, about as wide as a str
 
 We give you the very first picture: 248 real cells, where each one is, how long it is, and which way it's facing. We also give you the first 65 minutes of what really happened. The next 70 minutes? Hidden! Build a simulation, starting from the first picture, that predicts them.
 
-No code is given: how you build it is up to you. We want to see how you think, how you approach the problem, and how close you get. Build your twin with **Vivarium** and **Viva-munk** (links below). `images/digital_twin_result.png` shows what our digital twin produces, so you know what a result looks like.
+No code is given: how you build it is up to you. We want to see how you think, how you approach the problem, and how close you get. Build your twin with **Vivarium** and **Viva-munk** (links below). `images/digital_twin_result.png` and `images/digital_twin_video.gif` show what our digital twin produces, so you know what a final result looks like.
 
 ## Files
 
@@ -23,7 +23,8 @@ No code is given: how you build it is up to you. We want to see how you think, h
 | `data/real_masks_0-13.npz` | the real cell outlines, frames 0 to 13 |
 | `data/real_frame0_phase.png`, `data/real_frame0_masks.png`, `data/real_movie_0-13.gif` | the real pictures and movie |
 | `comsol_flow/` | the COMSOL flow: how the liquid moves through the chamber, from a COMSOL model of this exact chip |
-| `images/digital_twin_result.png` | what our digital twin produces |
+| `images/digital_twin_result.png` | our final result: the figure and the table under it |
+| `images/digital_twin_video.gif` | our final result: the video of our twin next to the real cells |
 | `requirements.txt` | the packages to install |
 
 ## Packages and install
@@ -48,13 +49,9 @@ Every cell gets longer over time. By the same amount every minute, or by the sam
 
 At some point a cell splits into two daughters. When? At a fixed size, or after growing a fixed amount since it was born? *Where to look:* `data/lineage_0-13.csv` tells you who is the mother of whom; compare a mother's length in her last frame with her daughters' lengths in their first frame. Look up the "adder" rule for bacteria.
 
-### Rule 3, where a cell sits matters
+### Rule 3, position
 
-Fresh food arrives through the open side of the chamber (x = 34 µm). Do cells near the opening grow faster than cells deep inside? *Where to look:* compare each cell's growth speed (rule 1) with its `x_um`.
-
-### Extras
-
-Does the growth speed change over the experiment? Do crowded cells grow more slowly? Can the COMSOL flow in `comsol_flow/` (how the liquid moves through the chamber) explain where cells grow? None of these is needed to do well.
+Position is where the cell sits in the chamber: its x and y in µm, taken from its pixel position in the picture. Fresh food arrives through the open side of the chamber (x = 34 µm). Do cells near the opening grow faster than cells deep inside? *Where to look:* compare each cell's growth speed (rule 1) with its `x_um`.
 
 Viva-munk already knows that cells push each other (physics) and can remove cells that leave through the opening; you just have to set them up.
 
@@ -71,10 +68,9 @@ Viva-munk already knows that cells push each other (physics) and can remove cell
 
 Your notebook (use `starter_notebook.ipynb`: it lists every step), showing:
 
-1. For each rule you add: a plot of your twin's cell count next to the real one (frames 0 to 13), and the **RMSE** of the cell count and of the cell area against the real data. RMSE (root mean square error) is the square root of the average of (your value - real value)² over the frames; lower is better.
-2. A table of all your RMSE values, rule by rule, so we can see what each rule changed.
-
-Optional: a few sentences on which rules your twin uses and what in the data backs each one.
+1. For each rule you add: a plot of your twin's cell count next to the real one (frames 0 to 13), and the **% error** of the cell count and of the cell area against the real data. % error is the average gap between your value and the real value, as a percentage of the real value. Lower is better.
+2. The final result, like ours in `images/`: a figure of (a) the cell count and (b) the total area over time, one line for each set of rules, against the real cells; the table of % error under it; and a video of your twin next to the real cells.
+3. A few sentences discussing your results.
 
 ## Links and documentation
 
