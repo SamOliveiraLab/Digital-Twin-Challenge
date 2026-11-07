@@ -1,14 +1,8 @@
 # Digital Twin Challenge
 
-**Before you start:** clone this exact version of Viva-munk (Vivarium with cells) and install it. Other versions won't give the same results.
+**Before you start:** install these so the imports work (Viva-munk at the exact version for this challenge, with Vivarium and pymunk):
 
-    git clone https://github.com/SamOliveiraLab/Viva-munk.git
-    cd Viva-munk
-    git checkout 3fc41887e17f9a435080a751e106e04223446185
-    pip install -e .
-    cd ..
-
-Then install the rest with `pip install -r requirements.txt jupyter` (more below).
+    python -m pip install "multi-cell @ git+https://github.com/SamOliveiraLab/Viva-munk.git@3fc41887e17f9a435080a751e106e04223446185" process-bigraph==1.1.4 bigraph-schema==1.1.3 pymunk==7.2.0
 
 ## The challenge
 
