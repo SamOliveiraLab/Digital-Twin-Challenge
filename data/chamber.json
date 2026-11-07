@@ -1,0 +1,15 @@
+{
+ "units": "micrometres (um); x to the right, y downwards, origin top-left of the chamber image",
+ "width_um": 34,
+ "height_um": 60,
+ "open_side": "right edge, x = 34 (main flow channel; cells pushed past it leave the chamber)",
+ "closed_sides": "left (x = 0), top (y = 0), bottom (y = 60)",
+ "pixel_um": 0.0645,
+ "frame_interval_s": 300.0,
+ "frames_given": "0-13 (0 to 65 min)",
+ "frames_scored": "14-27 (70 to 135 min)",
+ "cells_at_frame0": 248,
+ "cell_shape": "capsule (rod with round ends): length_um is the total tip-to-tip length, width_um the diameter; area = (L - w) * w + pi * w^2 / 4",
+ "angle_rad": "angle of the long axis from the +x axis, measured towards +y (downwards), in radians",
+ "organism": "Escherichia coli, phase contrast, 5 min between frames, growth medium flows past the open side"
+}

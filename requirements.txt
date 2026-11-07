@@ -1,0 +1,9 @@
+# Python 3.11 or newer, and git (Viva-munk is downloaded from GitHub)
+multi-cell @ git+https://github.com/SamOliveiraLab/Viva-munk.git@3fc41887e17f9a435080a751e106e04223446185
+process-bigraph==1.1.4
+bigraph-schema==1.1.3
+pymunk==7.2.0
+numpy
+pandas
+matplotlib
+pillow
